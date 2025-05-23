@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using System.Data;
+using System.Globalization;
 
 Console.Clear();
 // var data = DateTime.Now;
@@ -17,8 +18,16 @@ Console.WriteLine(data.DayOfWeek);*/
 
 
 var data = DateTime.Now;
+var pt = new CultureInfo("pt-BR");
+var en = new CultureInfo("en-US");
+var de = new CultureInfo("de-DE");
+//data local da maquina , servidor.
+var atual = CultureInfo.CurrentCulture;
 
+Console.WriteLine(data.ToString("D", pt));
+Console.WriteLine(data.ToString("D", de));
 
+Console.WriteLine("--------------------------------------");
 Console.WriteLine(data);
 Console.WriteLine(data.AddDays(-1));
 Console.WriteLine(data.AddMonths(12));
